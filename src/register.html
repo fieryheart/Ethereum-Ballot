@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head> 
+  <meta charset="utf-8" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>“我是歌手”海选投票平台</title> 
+  <link href="css/bootstrap.min.css" rel="stylesheet" /> 
+ </head> 
+ <body background="images/beijing.jpg" style="background-repeat:no-repeat;background-color: #FFFAFA;background-size: 58%;"> 
+  <div class="container"> 
+	<div class="row">
+  </br>
+		<h1>“我是歌手”海选投票平台</h1>
+		<hr>
+  </div>
+</br>
+</br>
+   <div class="row"> 
+    <div class="col-xs-12 col-sm-8 col-sm-push-2"> 
+
+      <div class="form-group"> 
+       <label class="col-form-label">账号:</label> 
+       <input type="text" class="form-control" name="address" id="address" />
+       <br /> 
+       <label class="col-form-label">用户名:</label> 
+       <input type="text" class="form-control" name="username" id="username" />
+       <br /> 
+       <label class="col-form-label">密码:</label> 
+       <input type="password" class="form-control" name="pwd" id="pwd" />
+       <br /> 
+       <label class="col-form-label">身份:</label> 
+       <input type="radio" name="identity" value="Voter" />观众 
+       <input type="radio" name="identity" value="Company" />企划社
+       <br /> 
+      </div>
+
+      <button class="btn btn-primary" onclick="App.register()">注册</button>
+	  <hr>
+      <a href="index.html">已有账号？去登录</a>
+    </div> 
+   </div> 
+  </div> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+  <script src="bootstrap.min.js"></script> 
+  <script src="web3.min.js"></script> 
+  <script src="truffle-contract.js"></script> 
+  <script src="index.js"></script>  
+ </body>
+</html>

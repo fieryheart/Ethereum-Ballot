@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>“我是歌手”海选投票平台</title> 
+  <link href="css/bootstrap.min.css" rel="stylesheet" /> 
+ </head> 
+ <body background="images/beijing.jpg" style="background-repeat:no-repeat;background-color: #FFFAFA;background-size: 58%;"> 
+  <div class="container"> 
+  <div class="row">
+  </br>
+		<h1>“我是歌手”海选投票平台</h1>
+		<hr>
+	</div>
+   <div class="row"> 
+   </br>
+    <div class="col-md-3"> 
+	 <ul class="list-group">
+		<li class="list-group-item"><a href="company.html">投票中心</a></li>
+		 <li class="list-group-item"><a href="javascript:gothere()">发布记录</a></li>
+		 <li class="list-group-item"><a href="index.html">退出登录</a></li>
+	 </ul>
+    </div> 
+    <div class="col-md-9"> 
+     <div class="row"> 
+       <div id="loader"> 
+        <p class="test-center" onclick="App.renderAllSingers()">Loading...</p> 
+       </div> 
+       <div id="content" > 
+        <table class="table"> 
+         <thead> 
+          <tr> 
+           <th scope="col">序号</th> 
+           <th scope="col">选手ID</th> 
+           <th scope="col">选手姓名</th> 
+           <th scope="col">选手介绍</th> 
+           <th scope="col">所属企划社</th> 
+           <th scope="col">综合实力</th> 
+           <th scope="col">已获票数</th> 
+          </tr> 
+         </thead> 
+         <tbody id="singers"> 
+         </tbody> 
+        </table> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      
+       <div class="form-group"> 
+        <label class="col-form-label">选手ID:</label> 
+        <input class="form-control" type="text" name="singerId" id="singerId" /> 
+        <br /> 
+        <label class="col-form-label">选手姓名:</label> 
+        <input class="form-control" type="text" name="singerName" id="singerName" /> 
+        <br /> 
+        <label class="col-form-label">选手描述:</label> 
+        <input class="form-control" type="text" name="singerDescription" id="singerDescription" /> 
+        <br /> 
+        <label class="col-form-label">综合实力:</label> 
+        <input class="form-control" type="text" name="score" id="score" /> 
+        <br /> 
+       </div> 
+       <button class="btn btn-primary" onclick="App.addSinger()">发布选手信息</button> 
+      </div> 
+     </div> 
+   </div> 
+  </div> 
+  <script type="text/javascript">
+    function gothere(){
+      var a=getRequest();
+      window.location.href="publishRecord.html?account="+a;
+
+    }
+    function getcaption(obj){
+
+var index=obj.lastIndexOf("\=");
+obj=obj.substring(index+1,obj.length);
+//  console.log(obj);
+return obj;
+}
+function getRequest() {
+var url = location.search; //获取url中"?"符后的字串
+var str;
+
+str=getcaption(url);
+   return str;
+}
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+  <script src="bootstrap.min.js"></script> 
+  <script src="web3.min.js"></script> 
+  <script src="truffle-contract.js"></script> 
+  <script src="index.js"></script>  
+ </body>
+</html>
